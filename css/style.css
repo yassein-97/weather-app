@@ -194,3 +194,9 @@
 .navbar-toggler:focus {
     box-shadow: none;
 }
+
+@media screen and (max-width:560px){
+    #inputsubscribe::placeholder{
+        font-size: 13px;
+    }
+}
