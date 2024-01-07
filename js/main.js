@@ -1,4 +1,5 @@
 const city = document.querySelector('#inputLocation');
+const FindBtn = document.querySelector('#FindBtn');
 const today = document.querySelector('#currentDay');
 const nextDay = document.querySelector('#nextDay');
 const comingDay = document.querySelector('#comingDay');
@@ -68,6 +69,8 @@ else{
 
 
 city.addEventListener('keyup',getCityWeather);
+city.addEventListener('blur',getCityWeather);
+FindBtn.addEventListener('click',getCityWeather);
 async function getCityWeather(){
     var request = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=1b62e163b4024e0e81a193317240601&q=${city.value}&days=3&aqi=no&alerts=no`);
     if(request.ok){
