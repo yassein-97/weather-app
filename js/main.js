@@ -27,11 +27,28 @@ const d = new Date();
 let currentDay = weekdays[d.getDay()];
 today.innerHTML = currentDay;
 //get next day
-let tomorrow = weekdays[d.getDay()+1];
-nextDay.innerHTML = tomorrow;
+if(d.getDay() == 6){
+    let tomorrow = weekdays[0];
+    nextDay.innerHTML = tomorrow;
+}
+else{
+    let tomorrow = weekdays[d.getDay()+1];
+    nextDay.innerHTML = tomorrow;
+}
+
 // get day after tomorrow
-let dayAfterTomorrow = weekdays[d.getDay()+2];
-comingDay.innerHTML = dayAfterTomorrow;
+if(d.getDay() == 5){
+    let dayAfterTomorrow = weekdays[0];
+    comingDay.innerHTML = dayAfterTomorrow;
+}
+else if(d.getDay() == 6){
+    let dayAfterTomorrow = weekdays[1];
+    comingDay.innerHTML = dayAfterTomorrow;
+}
+else{
+    let dayAfterTomorrow = weekdays[d.getDay()+2];
+    comingDay.innerHTML = dayAfterTomorrow;
+}
 // get the month
 let month = months[d.getMonth()];
 // get the number of the day
